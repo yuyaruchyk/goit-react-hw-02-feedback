@@ -1,15 +1,12 @@
 import React from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-
 import { Statistics } from './Statistic/Statistic';
-
 import { Notification } from './Notification/Notification';
 import { Section } from './Section/Section';
-
 import { Container } from './App.styled';
 
 export class App extends React.Component {
-  static propTypes = {};
+  
 
   state = {
     good: 0,
@@ -17,15 +14,17 @@ export class App extends React.Component {
     bad: 0,
   };
 
-  onBtnClick = actionType => {
-    this.setState(prevState => ({
-      [actionType]: prevState[actionType] + 1,
-    }));
-  };
+  onBtnClick = (actionType) => {
 
-  countTotalFeedback = () => {
-    const total = Object.values(this.state).reduce((prev, nmbr) => prev + nmbr);
-    return total;
+        this.setState(prevState => ({
+            [actionType]: prevState[actionType] + 1,
+        }))
+    }
+
+
+   countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
   countPositiveFeedbackPercentage = () => {
     const positive = Math.floor(
