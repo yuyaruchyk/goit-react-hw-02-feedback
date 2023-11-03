@@ -2,16 +2,22 @@ import { Stat } from "./Statistic.styled";
 
 
 
-export function Statistics({ rates, total, positive }) {
+export const Statistics = ({
+    good,
+    neutral,
+    bad,
+    total,
+    positiveFeedback
+}) => 
 
-    return (
+     (
         <div>
             <div>
-                {Object.keys(rates).map(k =>
-                    <Stat key={k}>{k}: <span>{rates[k]}</span></Stat>
-                )}
-                <Stat>Total: <span>{total}</span></Stat>
-                <Stat>Positive feedback: <span>{positive}%</span></Stat>
+                
+                <Stat>Good: {good}</Stat>
+    <Stat>Neutral: {neutral}</Stat>
+    <Stat>Bad: {bad}</Stat>
+    <Stat>Total: {total}</Stat>
+    <Stat>Positive feedback: {positiveFeedback}%</Stat>
             </div>
         </div>)
-}

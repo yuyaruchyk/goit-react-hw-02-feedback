@@ -16,49 +16,56 @@ export class App extends React.Component {
 
   onBtnClick = (actionType) => {
 
-        this.setState(prevState => ({
-            [actionType]: prevState[actionType] + 1,
-        }))
-    }
+    this.setState(prevState => ({
+      [actionType]: prevState[actionType] + 1,
+    }))
+  }
 
 
-   countTotalFeedback = () => {
+  countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
-  countPositiveFeedbackPercentage = () => {
-    const positive = Math.floor(
-      (this.state.good * 100) / this.countTotalFeedback()
-    );
-    return positive;
+ countPositiveFeedback = () => {
+    const { good } = this.state;
+    const total = this.countTotalFeedback();
+    return total > 0 ? ((good / total) * 100).toFixed(0) : 0;
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
+    const positiveFeedback = this.countPositiveFeedback();
 
     return (
       <Container>
-        <Section title="Please leave feedback">
+        <Section title="Please leave your feedback">
           <FeedbackOptions
+            arrayOfOptions={['good', 'neutral', 'bad']}
             onBtnClick={this.onBtnClick}
-            arrayOfOptions={Object.keys(this.state)}
           />
         </Section>
 
-        {total ? (
-          <Section title="Statistics">
+        <Section title="Statistics">
+          {total > 0 ? (
             <Statistics
-              rates={this.state}
-              total={this.countTotalFeedback()}
-              positive={this.countPositiveFeedbackPercentage()}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positiveFeedback={positiveFeedback}
             />
-          </Section>
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
       </Container>
     );
+
   }
 }
 
-export default App;
+export default App 
+
+
+
