@@ -3,10 +3,10 @@ import {Title} from "./Section.styled"
 
 export function Section({ title, children }) {
     return (
-        <section>
+        <Section>
             <Title>{title}</Title>
             {children}
-        </section>
+        </Section>
     )
 }
 

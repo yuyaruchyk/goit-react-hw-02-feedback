@@ -5,7 +5,7 @@ import { Section } from './Section/Section';
 import { Notification } from './Notification message/Notification message';
 import { Container } from './App.styled';
 
-export class App extends Component{
+export class App extends Component {
   static propTypes = {};
 
   state = {
