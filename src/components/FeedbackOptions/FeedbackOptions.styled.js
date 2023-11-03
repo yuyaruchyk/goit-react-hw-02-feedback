@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const Container = styled.div`
+export const ControlsContainer = styled.div`
 display: flex;
 justify-content: space-evenly;
 `

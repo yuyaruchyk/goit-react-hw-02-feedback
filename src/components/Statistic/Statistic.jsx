@@ -2,7 +2,7 @@ import { Stat } from "./Statistic.styled";
 
 
 
-export function Statistic({ rates, total, positive }) {
+export function Statistics({ rates, total, positive }) {
 
     return (
         <div>

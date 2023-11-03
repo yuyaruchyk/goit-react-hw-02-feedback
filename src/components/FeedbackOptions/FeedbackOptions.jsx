@@ -1,9 +1,10 @@
-import { Container, Btn } from "./FeedbackOptions.styled";
+import { ControlsContainer, Btn } from "./FeedbackOptions.styled";
+
 
 export function FeedbackOptions({ onBtnClick, arrayOfOptions }) {
   return (
     <div>
-      <Container>
+      <ControlsContainer>
         {arrayOfOptions.map(option => (
           <Btn
             key={option}
@@ -13,8 +14,10 @@ export function FeedbackOptions({ onBtnClick, arrayOfOptions }) {
             {option}
           </Btn>
         ))}
-      </Container>
+      </ControlsContainer>
     </div>
   )
 }
+
+
 

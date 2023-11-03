@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-import { Statistic } from './Statistic/Statistic';
+
+import { Statistics } from './Statistic/Statistic';
+
+import { Notification } from './Notification/Notification';
 import { Section } from './Section/Section';
-import { Notification } from './Notification message/Notification message';
+
 import { Container } from './App.styled';
 
-export class App extends Component {
+export class App extends React.Component {
   static propTypes = {};
 
   state = {
@@ -45,7 +48,7 @@ export class App extends Component {
 
         {total ? (
           <Section title="Statistics">
-            <Statistic
+            <Statistics
               rates={this.state}
               total={this.countTotalFeedback()}
               positive={this.countPositiveFeedbackPercentage()}

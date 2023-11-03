@@ -1,12 +1,18 @@
+import { H2 } from "./Section.styled";
 
-import {Title} from "./Section.styled"
+import PropTypes from "prop-types";
 
-export function Section({ title, children }) {
+export function Section({title, children}) {
     return (
-        <Section>
-            <Title>{title}</Title>
+        <section>
+            <H2>{title}</H2>
             {children}
-        </Section>
+        </section>
     )
+}
+
+Section.propTypes = {
+    title:PropTypes.string.isRequired,
+    children: PropTypes.object.isRequired
 }
 
