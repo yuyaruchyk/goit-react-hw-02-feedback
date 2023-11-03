@@ -5,11 +5,11 @@ export const Container = styled.div`
 margin-left: auto;
 margin-right: auto;
 text-align: center;
-width: 400px;
+width: 700px;
 padding: 20px;
 
 margin-top:20px;
-background-color: #fffffff1;
+background-color: white;
 border-radius:20px;
-box-shadow: 0 0 10px 5px #ffffff;
+
 `
