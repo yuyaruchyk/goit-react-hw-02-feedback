@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 
-export const ControlsContainer = styled.div`
+export const SecondaryContainer = styled.div`
 display: flex;
 justify-content: space-evenly;
 `
-export const ControlsHeader = styled.h2`
+export const SecondaryHeader = styled.h2`
  font-size: 30px;
   font-weight: 700;
   text-transform: capitalize;
@@ -19,13 +19,11 @@ export const Btn = styled.button`
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-
   display: block;
   min-width: 169px;
   height: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
   color: white;
   background-color: #7c90f3;
   margin-left: auto;
