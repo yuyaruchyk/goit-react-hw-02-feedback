@@ -1,7 +1,5 @@
-import { FillerTxt } from "./Notification.styled";
+import { FillerTxt } from './Notification.styled';
 
-export function Notification({message}) {
-    return (
-        <FillerTxt>{message}</FillerTxt>
-    )
-    }
+export function Notification({ message }) {
+  return <FillerTxt>{message}</FillerTxt>;
+}

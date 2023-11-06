@@ -6,27 +6,23 @@ import { Section } from './Section/Section';
 import { Container } from './App.styled';
 
 export class App extends React.Component {
-  
-
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  onBtnClick = (actionType) => {
-
+  onBtnClick = actionType => {
     this.setState(prevState => ({
       [actionType]: prevState[actionType] + 1,
-    }))
-  }
-
+    }));
+  };
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
- countPositiveFeedback = () => {
+  countPositiveFeedback = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
     return total > 0 ? ((good / total) * 100).toFixed(0) : 0;
@@ -61,11 +57,7 @@ export class App extends React.Component {
         </Section>
       </Container>
     );
-
   }
 }
 
-export default App 
-
-
-
+export default App;

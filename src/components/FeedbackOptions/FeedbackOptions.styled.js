@@ -1,16 +1,15 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 export const SecondaryContainer = styled.div`
-display: flex;
-justify-content: space-evenly;
-`
+  display: flex;
+  justify-content: space-evenly;
+`;
 export const SecondaryHeader = styled.h2`
- font-size: 30px;
+  font-size: 30px;
   font-weight: 700;
   text-transform: capitalize;
   text-shadow: 0 1px 1px #2d2020;
-`
+`;
 export const Btn = styled.button`
   margin-bottom: 20px;
   border: none;
@@ -30,4 +29,4 @@ export const Btn = styled.button`
   margin-right: auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-`
+`;
